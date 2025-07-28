@@ -200,37 +200,36 @@ The output directory (output_dir) will contain the following subdirectories and 
     --output-root /results/test
 
 ### We present an example of config.json as follows:
-
-{   "Annotation_1": "The required Python files are located in the TEI_Selection/dir_Code directory. You need to fill in their corresponding absolute paths.",
-	"IRIS_Code":"/path_to/TEI_Selection/dir_Code/01.IRIS_Pipeline.py", 
-	"RepeatMasker_Code":"/path_to/TEI_Selection/dir_Code/02_1.RepeatMakser_Pipeline_re_20250715.py",
-	"Polish_Code":"/path_to/TEI_Selection/dir_Code/02_2.Polish_Pipeline.py",
-	"reannotation_Code":"/path_to/TEI_Selection/dir_Code/03.2.Contact_polish_Reannotation_Give_TEI_V2.py",
-    "script_path" : "/path_to/TEI_Selection/dir_Code/script",
-	"TEI_homonlogy_py":"/path_to/TEI_Selection/dir_Code//02.INS_TE_homonlogy.v2.3.py",
-
-    "Annotation_2": "The path to conda and the absolute paths of the required environments.",
-	"conda_activate" : "/home/miniconda3/bin/activate",
-	"snakemake_env": "/home/miniconda3/envs/snakemake", 
-	"medaka_env" :"/home/miniconda3/envs/medaka",
-	"irissv_env" : "/home/miniconda3/envs/irissv",
-
-    "Annotation_3": "The absolute paths of the required software.",
-	"samtools" : "/path_to/software/samtools",
-	"bedtools" : "/path_to/software/bedtools",
-	"minimap2" : "/path_to/software/minimap2",
-	"seqtk" : "/path_to/software/seqtk",
-	"seqkit" : "/path_to/software/seqkit",
-	"racon" : "/path_to/software/racon",
-	"shasta" : "/path_to/software/shasta",
-	"RepeatMasker_softer" : "/path_to/software/RepeatMasker",
-	"sniffles" : "/path_to/software/sniffles",
-	"blast" : "/path_to/software/blast",
-
-    "Annotation_4": "The absolute path of the reference genome."
-	"hg38_fa" : "/path_to/hg38_ref/hg38_mainChr.fa",
-	"ref_fasta" : "/path_to/hg38_ref/hg38_mainChr.fa"
-}
+	{   "Annotation_1": "The required Python files are located in the TEI_Selection/dir_Code directory. You need to fill in their corresponding absolute paths.",
+		"IRIS_Code":"/path_to/TEI_Selection/dir_Code/01.IRIS_Pipeline.py", 
+		"RepeatMasker_Code":"/path_to/TEI_Selection/dir_Code/02_1.RepeatMakser_Pipeline_re_20250715.py",
+		"Polish_Code":"/path_to/TEI_Selection/dir_Code/02_2.Polish_Pipeline.py",
+		"reannotation_Code":"/path_to/TEI_Selection/dir_Code/03.2.Contact_polish_Reannotation_Give_TEI_V2.py",
+	    "script_path" : "/path_to/TEI_Selection/dir_Code/script",
+		"TEI_homonlogy_py":"/path_to/TEI_Selection/dir_Code//02.INS_TE_homonlogy.v2.3.py",
+	
+	    "Annotation_2": "The path to conda and the absolute paths of the required environments.",
+		"conda_activate" : "/home/miniconda3/bin/activate",
+		"snakemake_env": "/home/miniconda3/envs/snakemake", 
+		"medaka_env" :"/home/miniconda3/envs/medaka",
+		"irissv_env" : "/home/miniconda3/envs/irissv",
+	
+	    "Annotation_3": "The absolute paths of the required software.",
+		"samtools" : "/path_to/software/samtools",
+		"bedtools" : "/path_to/software/bedtools",
+		"minimap2" : "/path_to/software/minimap2",
+		"seqtk" : "/path_to/software/seqtk",
+		"seqkit" : "/path_to/software/seqkit",
+		"racon" : "/path_to/software/racon",
+		"shasta" : "/path_to/software/shasta",
+		"RepeatMasker_softer" : "/path_to/software/RepeatMasker",
+		"sniffles" : "/path_to/software/sniffles",
+		"blast" : "/path_to/software/blast",
+	
+	    "Annotation_4": "The absolute path of the reference genome."
+		"hg38_fa" : "/path_to/hg38_ref/hg38_mainChr.fa",
+		"ref_fasta" : "/path_to/hg38_ref/hg38_mainChr.fa"
+	}
 
 
 ### In-depth Annotation of TEI (Optional)
@@ -239,18 +238,18 @@ After identifying somatic TEI, we have performed a more in-depth annotation. How
 
 
 # Output Files
-<output_root>/
-├── 01.IRIS/
-│   └── <SAMPLE_ID>/
-│       ├── ALL_reannotation/      # Initial TEI annotations. The file all.INS.sdust.trf.replaced.cor.type.TE_TD_de_novo_type.tsv, combined with the annotation results from RepeatMasker, annotates the annotation status of all insertions (INS).
-│       ├── RepeatMasker/           # Repeat element annotations
-│       └── <SAMPLE_ID>/            # IRIS reslute
-├── 02.Polish/
-│   └── <SAMPLE_ID>/                # Polished reslute. The file <SAMPLE_ID>_sample_vcf_region_df_only_positive_polish.csv records the determination of whether insertions are somatic after constructing a local personal reference genome.
-└── 03.Results/
-    └── <SAMPLE_ID>/
-        └── FINAL_TEI.vcf           # Final TEI calls
-
+	<output_root>/
+	├── 01.IRIS/
+	│   └── <SAMPLE_ID>/
+	│       ├── ALL_reannotation/      # Initial TEI annotations. The file all.INS.sdust.trf.replaced.cor.type.TE_TD_de_novo_type.tsv, combined with the annotation results from RepeatMasker, annotates the annotation status of all insertions (INS).
+	│       ├── RepeatMasker/           # Repeat element annotations
+	│       └── <SAMPLE_ID>/            # IRIS reslute
+	├── 02.Polish/
+	│   └── <SAMPLE_ID>/                # Polished reslute. The file <SAMPLE_ID>_sample_vcf_region_df_only_positive_polish.csv records the determination of whether insertions are somatic after constructing a local personal reference genome.
+	└── 03.Results/
+	    └── <SAMPLE_ID>/
+	        └── FINAL_TEI.vcf           # Final TEI calls
+	
 
 #### The final vcf Description
 | Column | Name | Description |
@@ -274,8 +273,6 @@ After identifying somatic TEI, we have performed a more in-depth annotation. How
 |END	    |Integer|	End position of the insertion
 |SUPPORT	|Integer|	Number of supporting reads
 |RNAMES		|String	|Comma-separated list of supporting read names
-
-|The following annotations are optional：
 |TEI_Type		|String	|Transposable Element Insertion classification category
 |TEI_subType	|String	|Subclassification of TEI events based on structural features
 |Homology_Type		|String	|Microhomology pattern classification at insertion breakpoint
