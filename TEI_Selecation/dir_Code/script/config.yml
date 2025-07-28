@@ -1,0 +1,28 @@
+path:
+    output_trf: "00.trf"
+    output_sdust: "01.sdust"
+    pattern_f: "02.trf_pattern"
+    ins_f: "03.ins_seq"
+    ref_f: "04.ref_local"
+    output_needle: "05.needle"
+file:
+    valid_sv: "valid.ins.ls"
+    valid_repeat: "valid.repeat.ins.ls"
+    sdust_trf_summary: "all.INS.sdust.trf.info.cor.tsv"
+    trf_size_check: "trf_fasta_size_check.list"
+    repeatmasker_summary: "all.INS.repeatmasker.info.cor.tsv"
+    needle_summary: "needle.summary.ori.v.tsv"
+    replace_repeatmasker: "all.INS.sdust.trf.replaced.cor.tsv"
+    decision_summary: "all.INS.sdust.trf.replaced.cor.type.tsv"
+    final_summary: "all.INS.sdust.trf.replaced.cor.type.final.tsv"
+    repeat_check:
+        summary_dict: "ins_seq.ref.trf.summary.dict.obj"
+        cor_dict: "ins_seq.pattern.align.cor.dict.obj"
+        ins_ls: "repeat_pattern.ins.ls"
+tool:
+    trf: "/NAS/wg_liuxy/04.software/TRF-master/build/src/trf"
+    sdust: "/NAS/wg_liuxy/04.software/sdust"
+    needle: "/NAS/wg_liuxy/software/EMBOSS-6.6.0/emboss/needle"
+parameter:
+    trf: "2 5 7 80 10 50 2000 -l 10 -ngs -h"
+    needle: "-gapopen 10 -gapextend 0.5"

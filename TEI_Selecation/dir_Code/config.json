@@ -1,0 +1,30 @@
+{
+	"IRIS_Code":"/NAS/wg_liuxy/01.Pancaner/12.XiuHui_20250604/11.Github_TEI_Selecation_Test/TEI_Selecation/dir_Code/01.IRIS_Pipeline.py",
+	"RepeatMasker_Code":"/NAS/wg_liuxy/01.Pancaner/12.XiuHui_20250604/11.Github_TEI_Selecation_Test/TEI_Selecation/dir_Code/02_1.RepeatMakser_Pipeline_re_20250715.py",
+	"Polish_Code":"/NAS/wg_liuxy/01.Pancaner/12.XiuHui_20250604/11.Github_TEI_Selecation_Test/TEI_Selecation/dir_Code/02_2.Polish_Pipeline.py",
+	"reannotation_Code":"/NAS/wg_liuxy/01.Pancaner/12.XiuHui_20250604/11.Github_TEI_Selecation_Test/TEI_Selecation/dir_Code/03.2.Contact_polish_Reannotation_Give_TEI_V2.py",
+	
+	"conda_activate" : "/home/wg_liuxy/miniconda3/bin/activate",
+	"snakemake_env": "/home/wg_liuxy/miniconda3/envs/snakemake", 
+	"medaka_env" :"/home/wg_liuxy/miniconda3/envs/medaka",
+	"irissv_env" : "/home/wg_liuxy/miniconda3/envs/irissv",
+
+	"samtools" : "/NAS/wg_fzt/software/samtools-1.9/samtools",
+	"bedtools" : "/NAS/wg_fzt/software/bedtools-2.30.0",
+	"minimap2" : "/NAS/wg_fzt/software/minimap2-2.17/minimap2",
+	"seqtk" : "/NAS/wg_fzt/software/seqtk/seqtk",
+	"seqkit" : "/home/wg_liuxy/miniconda3/envs/medaka/bin/seqkit",
+	"racon" : "/NAS/wg_fzt/software/racon/build/bin/racon",
+	"shasta" : "/NAS/wg_fzt/software/shasta-Linux-0.5.1",
+	"RepeatMasker_softer" : "/NAS/wg_fzt/software/RepeatMasker/RepeatMasker",
+	"sniffles" : "/NAS/wg_liuxy/04.software/sniffles/bin/sniffles",
+	"blast" : "/NAS/wg_ztf/tools/ncbi-blast-2.14.1+/bin/",
+
+	
+	"script_path" : "/NAS/wg_liuxy/04.software/PanCancer_Annotation_Snakemake_dir/script",
+	"TEI_homonlogy_py":"/NAS/wg_liuxy/01.Pancaner/12.XiuHui_20250604/00.program/02.INS_TE_homonlogy.v2.3.py",
+
+
+	"hg38_fa" : "/NAS/wg_liuxy/06.hg38_ref/hg38_mainChr.fa",
+	"ref_fasta" : "/NAS/wg_liuxy/06.hg38_ref/hg38_mainChr.fa"
+}

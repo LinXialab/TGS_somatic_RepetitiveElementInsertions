@@ -1,0 +1,6 @@
+purity10
+purity20
+purity30
+purity40
+purity50
+purity100
