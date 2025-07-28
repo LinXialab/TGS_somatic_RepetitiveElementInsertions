@@ -273,15 +273,14 @@ After identifying somatic TEI, we have performed a more in-depth annotation. How
 |END	    |Integer|	End position of the insertion
 |SUPPORT	|Integer|	Number of supporting reads
 |RNAMES		|String	|Comma-separated list of supporting read names
-|TEI_Type		|String	|Transposable Element Insertion classification category
-|TEI_subType	|String	|Subclassification of TEI events based on structural features
-|Homology_Type		|String	|Microhomology pattern classification at insertion breakpoint
-|Truncation_Type	|String	|Terminal truncation status of the inserted transposable element
-|PolyA_T_seq	| String |	Nucleotide sequence of polyA/polyT tail adjacent to insertion site
-|PolyA_T_distance	|String |	Base pair distance between insertion breakpoint and start of polyA/T sequence
-|PolyA_T_percent	|String |	Percentage of adenine/thymine bases in the polyA/T region
-|PolyA_T_max_consecutive	| String |	Maximum consecutive A/T run length in the polyA/T tail
-
+|TEI_Type		|String	|Transposable Element Insertion classification category (optional)
+|TEI_subType	|String	|Subclassification of TEI events based on structural features (optional)
+|Homology_Type		|String	|Microhomology pattern classification at insertion breakpoint (optional)
+|Truncation_Type	|String	|Terminal truncation status of the inserted transposable element (optional)
+|PolyA_T_seq	| String |	Nucleotide sequence of polyA/polyT tail adjacent to insertion site (optional)
+|PolyA_T_distance	|String |	Base pair distance between insertion breakpoint and start of polyA/T sequence (optional)
+|PolyA_T_percent	|String |	Percentage of adenine/thymine bases in the polyA/T region (optional)
+|PolyA_T_max_consecutive	| String |	Maximum consecutive A/T run length in the polyA/T tail (optional)
 
 
 
