@@ -404,6 +404,7 @@ def main(args):
     global TEI_homonlogy_py
     global RM_dir
     global reanno_dir
+    global sample
     config = load_config(args.config)
     TEI_homonlogy_py = config["TEI_homonlogy_py"]
     sample =args.sampleinput
