@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-IRIS TEI Pipeline - Full Workflow Automation Script
+IRIS ITE Pipeline - Full Workflow Automation Script
 Version: 1.1.0
-Description: Automated pipeline for IRIS TEI analysis with verified path dependencies
+Description: Automated pipeline for IRIS ITE analysis with verified path dependencies
 """
 
 import os
@@ -103,7 +103,7 @@ def execute_step(command, step_name, timeout=7200):
 
 def main():
     parser = argparse.ArgumentParser(
-        description='IRIS TEI Analysis Pipeline',
+        description='IRIS ITE Analysis Pipeline',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument('--sample', required=True, help='Sample identifier')
@@ -114,7 +114,7 @@ def main():
     parser.add_argument('--config', required=True, help='JSON configuration file')
     parser.add_argument('--output-root', default=os.getcwd(), help='Root output directory')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
-    parser.add_argument('--Annotation', help="If this option is selected, further annotation of TEI will be performed, and information such as truncation polyA, TSD, etc., will be provided.(NO or YES)",type=str,default="NO")	
+    parser.add_argument('--Annotation', help="If this option is selected, further annotation of ITE will be performed, and information such as truncation polyA, TSD, etc., will be provided.(NO or YES)",type=str,default="NO")	
 
     args = parser.parse_args()
 
@@ -122,7 +122,7 @@ def main():
         logger.setLevel(logging.DEBUG)
 
     logger.info("=" * 50)
-    logger.info(f"INITIATING IRIS TEI ANALYSIS: {args.sample}")
+    logger.info(f"INITIATING IRIS ITE ANALYSIS: {args.sample}")
     logger.info("=" * 50)
 
     # Load and validate configuration
@@ -209,7 +209,7 @@ def main():
         sys.exit(1)
 
     logger.info("=" * 50)
-    logger.info(f"SUCCESSFULLY COMPLETED IRIS TEI ANALYSIS: {args.sample}")
+    logger.info(f"SUCCESSFULLY COMPLETED IRIS ITE ANALYSIS: {args.sample}")
     logger.info(f"RESULTS AVAILABLE AT: {dirs['Results']}")
     logger.info("=" * 50)
 
