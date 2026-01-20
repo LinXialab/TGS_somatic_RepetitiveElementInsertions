@@ -1,10 +1,10 @@
 # TIES (TDScope and ITE-Selection) pipeline
 ## Overview
-This pipeline detects Transcription Element Insertion (TEI) and Tandem Repeat Expansion (TRE) in cancer samples using a three-step approach:
+This pipeline detects insertions of transposable element (ITE) and Tandem Repeat Expansion (TRE) in cancer samples using a three-step approach:
 
 - 1.Preparation Pipeline: Merges tumor/normal BAM files, performs variant calling with Sniffles2 and straglr.
 - 2.TRE Detection: Identifies somatic tandem repeat expansions using specialized detection algorithms.
-- 3.TEI Detection: Identifies transcription element insertion using specialized detection algorithms.
+- 3.ITE Detection: Identifies transcription element insertion using specialized detection algorithms.
 
 ## Dependencies
 - Step 1 environment
@@ -27,7 +27,7 @@ This pipeline detects Transcription Element Insertion (TEI) and Tandem Repeat Ex
         - human_GRCh38_no_alt_analysis_set.trf.bed (tandem repeat annotations)
         - TD.RepeatAnno.Merge200bp.mainchrom.LengthSortLess1kTD.sort.bed (repeat mask annotations)
 - Step 3 environment
-    - During the TEI Detection process, you need three environments. You can either switch between environments or use the absolute paths of the corresponding software to run the software. For ease of use, we have provided the GitHub addresses for the required software. You can configure them according to the tutorials for the respective software.
+    - During the ITE Detection process, you need three environments. You can either switch between environments or use the absolute paths of the corresponding software to run the software. For ease of use, we have provided the GitHub addresses for the required software. You can configure them according to the tutorials for the respective software.
         - snakemake: https://github.com/snakemake/snakemake
         - medaka: https://github.com/nanoporetech/medaka
         - iris: https://github.com/mkirsche/Iris
@@ -168,7 +168,7 @@ The output directory (output_dir) will contain the following subdirectories and 
 |FPRate	| float |	False positive rate estimate 
 
 
-# Step 3: TEI Detection
+# Step 3: ITE Detection
 ## Input Requirements
 - sample ID
 - Tumor BAM file
@@ -178,7 +178,7 @@ The output directory (output_dir) will contain the following subdirectories and 
 - config file: Include the environment, software path, script path, and the absolute path of the reference genome that we need. Please make sure to complete them before running.
 - out dir:For the file path where the output results will be saved, we suggest that after you create the path, you should navigate to that directory and then execute the Python script from there.
 ## usage
-    python TEI-Selecation.py  \
+    python ITE-Selecation.py  \
     --sample <SAMPLE_ID> \
     --tumor-bam <TUMOR_BAM> \
     --blood-bam <NORMAL_BAM> \
@@ -190,7 +190,7 @@ The output directory (output_dir) will contain the following subdirectories and 
 ### Example Command
     mkdir /results/test
     cd /results/test
-    python TEI-Selecation.py  \
+    python ITE-Selecation.py  \
     --sample test \
     --tumor-bam /data/test_tumor.bam \
     --blood-bam /data/test_normal.bam \
@@ -200,13 +200,13 @@ The output directory (output_dir) will contain the following subdirectories and 
     --output-root /results/test
 
 ### We present an example of config.json as follows:
-	{   "Annotation_1": "The required Python files are located in the TEI_Selection/dir_Code directory. You need to fill in their corresponding absolute paths.",
-		"IRIS_Code":"/path_to/TEI_Selection/dir_Code/01.IRIS_Pipeline.py", 
-		"RepeatMasker_Code":"/path_to/TEI_Selection/dir_Code/02_1.RepeatMakser_Pipeline_re_20250715.py",
-		"Polish_Code":"/path_to/TEI_Selection/dir_Code/02_2.Polish_Pipeline.py",
-		"reannotation_Code":"/path_to/TEI_Selection/dir_Code/03.2.Contact_polish_Reannotation_Give_TEI_V2.py",
-	    "script_path" : "/path_to/TEI_Selection/dir_Code/script",
-		"TEI_homonlogy_py":"/path_to/TEI_Selection/dir_Code//02.INS_TE_homonlogy.v2.3.py",
+	{   "Annotation_1": "The required Python files are located in the ITE_Selection/dir_Code directory. You need to fill in their corresponding absolute paths.",
+		"IRIS_Code":"/path_to/ITE_Selection/dir_Code/01.IRIS_Pipeline.py", 
+		"RepeatMasker_Code":"/path_to/ITE_Selection/dir_Code/02_1.RepeatMakser_Pipeline_re_20250715.py",
+		"Polish_Code":"/path_to/ITE_Selection/dir_Code/02_2.Polish_Pipeline.py",
+		"reannotation_Code":"/path_to/ITE_Selection/dir_Code/03.2.Contact_polish_Reannotation_Give_ITE_V2.py",
+	    "script_path" : "/path_to/ITE_Selection/dir_Code/script",
+		"ITE_homonlogy_py":"/path_to/ITE_Selection/dir_Code//02.INS_TE_homonlogy.v2.3.py",
 	
 	    "Annotation_2": "The path to conda and the absolute paths of the required environments.",
 		"conda_activate" : "/home/miniconda3/bin/activate",
@@ -232,8 +232,8 @@ The output directory (output_dir) will contain the following subdirectories and 
 	}
 
 
-### In-depth Annotation of TEI (Optional)
-After identifying somatic TEI, we have performed a more in-depth annotation. However, considering the varying research objectives of different researchers and the time-consuming nature of this step, we have made this step optional. If you require a more detailed annotation of the identified somatic TEI, we recommend modifying the --Annotation parameter and changing it to YES.
+### In-depth Annotation of ITE (Optional)
+After identifying somatic ITE, we have performed a more in-depth annotation. However, considering the varying research objectives of different researchers and the time-consuming nature of this step, we have made this step optional. If you require a more detailed annotation of the identified somatic ITE, we recommend modifying the --Annotation parameter and changing it to YES.
 
 
 
@@ -241,14 +241,14 @@ After identifying somatic TEI, we have performed a more in-depth annotation. How
 	<output_root>/
 	├── 01.IRIS/
 	│   └── <SAMPLE_ID>/
-	│       ├── ALL_reannotation/      # Initial TEI annotations. The file all.INS.sdust.trf.replaced.cor.type.TE_TD_de_novo_type.tsv, combined with the annotation results from RepeatMasker, annotates the annotation status of all insertions (INS).
+	│       ├── ALL_reannotation/      # Initial ITE annotations. The file all.INS.sdust.trf.replaced.cor.type.TE_TD_de_novo_type.tsv, combined with the annotation results from RepeatMasker, annotates the annotation status of all insertions (INS).
 	│       ├── RepeatMasker/           # Repeat element annotations
 	│       └── <SAMPLE_ID>/            # IRIS reslute
 	├── 02.Polish/
 	│   └── <SAMPLE_ID>/                # Polished reslute. The file <SAMPLE_ID>_sample_vcf_region_df_only_positive_polish.csv records the determination of whether insertions are somatic after constructing a local personal reference genome.
 	└── 03.Results/
 	    └── <SAMPLE_ID>/
-	        └── FINAL_TEI.vcf           # Final TEI calls
+	        └── FINAL_ITE.vcf           # Final ITE calls
 	
 
 #### The final vcf Description
@@ -273,8 +273,8 @@ After identifying somatic TEI, we have performed a more in-depth annotation. How
 |END	    |Integer|	End position of the insertion
 |SUPPORT	|Integer|	Number of supporting reads
 |RNAMES		|String	|Comma-separated list of supporting read names
-|TEI_Type		|String	|Transposable Element Insertion classification category (optional)
-|TEI_subType	|String	|Subclassification of TEI events based on structural features (optional)
+|ITE_Type		|String	|Transposable Element Insertion classification category (optional)
+|ITE_subType	|String	|Subclassification of ITE events based on structural features (optional)
 |Homology_Type		|String	|Microhomology pattern classification at insertion breakpoint (optional)
 |Truncation_Type	|String	|Terminal truncation status of the inserted transposable element (optional)
 |PolyA_T_seq	| String |	Nucleotide sequence of polyA/polyT tail adjacent to insertion site (optional)
