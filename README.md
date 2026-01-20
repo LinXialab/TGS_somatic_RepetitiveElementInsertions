@@ -77,7 +77,7 @@ This pipeline detects insertions of transposable element (ITE) and Tandem Repeat
       [--straglr <STRAGLR_PATH>] \
       [--log_dir <LOG_DIR>]
 ### Example Command
-    python Prepaare.pipeline.py \
+    python Prepare.pipeline.py \
       --sampleid tumor_normal \
       --tumor_bam test/tumor.bam \
       --blood_bam test/normal.bam \
