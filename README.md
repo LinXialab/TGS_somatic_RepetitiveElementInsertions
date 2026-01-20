@@ -105,7 +105,7 @@ This pipeline detects insertions of transposable element (ITE) and Tandem Repeat
 - Normal BAM file
 - straglr output BED file (from Step 1)
 - Sniffles2 VCF file (from Step 1)
-- SomTDDetectorV15 script directory
+- TDScope script directory
 ## usage
     python TRE.TDscope.py \
       --tumor_id <TUMOR_ID> \
@@ -125,7 +125,7 @@ This pipeline detects insertions of transposable element (ITE) and Tandem Repeat
       --straglr_bed /Path/to/straglr_tumor_normal.bed \
       --sniffles_vcf /Path/to/tumor_normal_merge_minimap2_sniffles_v2.vcf \
       --output_dir /Path/to/TRE_res \
-      --script_dir /Path/to/SomTDDetectorV15
+      --script_dir /Path/to/TDScope
 
 # Output Files
 The output directory (output_dir) will contain the following subdirectories and files:
