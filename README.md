@@ -1,4 +1,4 @@
-# Somatic Transcription Element Insertion (TEI) and Tandem Repeat Expansion (TRE) Detection Pipeline
+# TIES (TDScope and ITE-Selection) pipeline
 ## Overview
 This pipeline detects Transcription Element Insertion (TEI) and Tandem Repeat Expansion (TRE) in cancer samples using a three-step approach:
 
