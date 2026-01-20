@@ -200,13 +200,13 @@ The output directory (output_dir) will contain the following subdirectories and 
     --output-root /results/test
 
 ### We present an example of config.json as follows:
-	{   "Annotation_1": "The required Python files are located in the ITE_Selection/dir_Code directory. You need to fill in their corresponding absolute paths.",
-		"IRIS_Code":"/path_to/ITE_Selection/dir_Code/01.IRIS_Pipeline.py", 
-		"RepeatMasker_Code":"/path_to/ITE_Selection/dir_Code/02_1.RepeatMakser_Pipeline_re_20250715.py",
-		"Polish_Code":"/path_to/ITE_Selection/dir_Code/02_2.Polish_Pipeline.py",
-		"reannotation_Code":"/path_to/ITE_Selection/dir_Code/03.2.Contact_polish_Reannotation_Give_ITE_V2.py",
-	    "script_path" : "/path_to/ITE_Selection/dir_Code/script",
-		"ITE_homonlogy_py":"/path_to/ITE_Selection/dir_Code//02.INS_TE_homonlogy.v2.3.py",
+	{   "Annotation_1": "The required Python files are located in the ITE-Selection/dir_Code directory. You need to fill in their corresponding absolute paths.",
+		"IRIS_Code":"/path_to/ITE-Selection/dir_Code/01.IRIS_Pipeline.py", 
+		"RepeatMasker_Code":"/path_to/ITE-Selection/dir_Code/02_1.RepeatMakser_Pipeline_re_20250715.py",
+		"Polish_Code":"/path_to/ITE-Selection/dir_Code/02_2.Polish_Pipeline.py",
+		"reannotation_Code":"/path_to/ITE-Selection/dir_Code/03.2.Contact_polish_Reannotation_Give_ITE_V2.py",
+	    "script_path" : "/path_to/ITE-Selection/dir_Code/script",
+		"ITE_homonlogy_py":"/path_to/ITE-Selection/dir_Code//02.INS_TE_homonlogy.v2.3.py",
 	
 	    "Annotation_2": "The path to conda and the absolute paths of the required environments.",
 		"conda_activate" : "/home/miniconda3/bin/activate",
